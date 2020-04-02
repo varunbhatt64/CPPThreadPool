@@ -23,7 +23,7 @@ void PrintNumbers(const string& taskNumber)
 int main()
 {
 	int taskNumber = 1;
-	ThreadPool tp(PrintNumbers);
+	ThreadPool tp(PrintNumbers, 5);
 	while (true)
 	{
 		ostringstream os;

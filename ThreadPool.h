@@ -11,7 +11,7 @@ typedef void(*callback_function)(const std::string& str);
 class ThreadPool
 {
 public:
-	ThreadPool(callback_function callback);
+	ThreadPool(callback_function callback, int numberOfThreads = std::thread::hardware_concurrency());
 	~ThreadPool();
 	void QueueWork(const std::string& buffer);
 

@@ -1,9 +1,8 @@
 #include "ThreadPool.h"
 
-ThreadPool::ThreadPool(callback_function callback) : done(false)
+ThreadPool::ThreadPool(callback_function callback, int numberOfThreads) : done(false)
 {
 	CallBack = callback;
-	int numberOfThreads = std::thread::hardware_concurrency();
 	if (numberOfThreads == 0) {
 		numberOfThreads = 1;
 	}
